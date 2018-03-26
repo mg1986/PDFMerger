@@ -62,7 +62,7 @@ def confirm_popup():
     toplevel.wm_title("Confirm Merge")
     label = Label(toplevel, text=confirm_message)
     label.grid(row=0, column=1)
-    yes_button = Button(master=toplevel, text="Yes", command=lambda: confirm_sync(toplevel))
+    yes_button = Button(master=toplevel, text="Yes", command=lambda: confirm_merge(toplevel))
     yes_button.grid(row=2, column=1)
     no_button = Button(master=toplevel, text="No", command=toplevel.destroy)
     no_button.grid(row=3, column=1)
@@ -70,7 +70,7 @@ def confirm_popup():
     toplevel.grab_set()
 
 # Executes main when confirm PDF Merge button clicked
-def confirm_sync(toplevel):
+def confirm_merge(toplevel):
     toplevel.destroy()
     start_thread(main)
     
